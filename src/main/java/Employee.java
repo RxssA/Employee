@@ -1,3 +1,4 @@
+
 public class Employee {
     private String name;
     private String pps;
@@ -45,19 +46,24 @@ public class Employee {
     }
 
     public String getEmploymentType() {
-        return EmploymentType;
+        if (EmploymentType == "full time" || EmploymentType == "part time" || EmploymentType == "contract") {
+            return EmploymentType;
+        } else {
+            System.out.println("invalid employment type");
+        }
+        return null;
     }
-
-    public void setEmploymentType(String employmentType) {
-        EmploymentType = employmentType;
-    }
+        public void setEmploymentType(String employmentType){
+            EmploymentType = employmentType;
+        }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
-                ", PPS='" + pps + '\'' +
+                ", pps='" + pps + '\'' +
                 ", EmploymentType='" + EmploymentType + '\'' +
                 '}';
     }
 }
+
